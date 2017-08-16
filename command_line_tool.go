@@ -44,7 +44,7 @@ func main() {
   jsonErr := json.Unmarshal(read, &chars)
   if jsonErr != nil {
     fmt.Println(jsonErr)
-  } else if len(chars) > 0{
+  } else if len(chars) > 0 {
     char := chars[0]
     died := char.Died
     if died == "" {
@@ -52,5 +52,7 @@ func main() {
     } else {
       fmt.Printf("%s %s died %s\n", *firstName, *lastName, died)
     }
+  } else {
+    fmt.Println("Oh no, couldn't find that character")
   }
 }
